@@ -2,6 +2,7 @@
 
 // dichiaro le constanti
 const btn = document.getElementById("button")
+let count = 0;
 
 
 btn.addEventListener("click",
@@ -28,20 +29,29 @@ btn.addEventListener("click",
             nuovoElemento.addEventListener("click",
             
                 function(){
-                    let count = 0;
+                    
 
                     if(myArrNum.includes(i)){
                         nuovoElemento.classList.add("bomba");
-                        document.getElementById("risultato_partita").innerHTML = `Mi dipiace, hai perso. Il tuo punteggio è di ${count}`;
+
+                            if(count == 84){
+                                document.getElementById("risultato_partita").innerHTML = `Hai vinto, prova a giocare al superenalotto perchè sei fortunato`;
+                            }else{
+                                document.getElementById("risultato_partita").innerHTML = `Mi dipiace, hai perso. Il tuo punteggio è di ${count}`;
+                            }
+                        
+
                         }else{
                         nuovoElemento.classList.add("save");
-                        count++;
+                        count += 1;
                     }
                     
                 }
             );
         };
     }
+
+    
     
 );
 
