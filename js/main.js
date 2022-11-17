@@ -8,7 +8,10 @@ btn.addEventListener("click",
 
     function(){
 
-        // createNumber()
+        // creare le bombe
+        const myArrNum = randomNumberNot(16, 1, 100)
+
+        console.log(myArrNum)
 
         let myElement = document.getElementById("container")
 
@@ -25,10 +28,16 @@ btn.addEventListener("click",
             nuovoElemento.addEventListener("click",
             
                 function(){
-                    nuovoElemento.classList.toggle("click")
+                    let count = 0;
 
-                    console.log(i)
-
+                    if(myArrNum.includes(i)){
+                        nuovoElemento.classList.add("bomba");
+                        document.getElementById("risultato_partita").innerHTML = `Mi dipiace, hai perso. Il tuo punteggio è di ${count}`;
+                        }else{
+                        nuovoElemento.classList.add("save");
+                        count++;
+                    }
+                    
                 }
             );
         };

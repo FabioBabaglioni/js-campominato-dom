@@ -22,12 +22,12 @@ function createGrid(number){
 
 // genera numeri random min max
 function randomNumber(min, max){
-    return (math.floor(math.random() * ((max + 1) - min) + min));
+    return (Math.floor(Math.random() * ((max + 1) - min) + min));
 }
 
 // genera numeri unici random senza doppioni
 function randomNumberNot (howMany, minNum, maxNum){
-    const newArr = []:
+    const newArr = [];
 
     // inserire i numeri nel array
     while (newArr.length < howMany){
@@ -38,4 +38,6 @@ function randomNumberNot (howMany, minNum, maxNum){
             newArr.push(newNumber);
         }
     }
+
+    return newArr;
 }
